@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name ="viewport" content="width=device-width">
+  <title>Search Your Flight</title>
+    <!-- necessary scripts for the dialog -->
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
+</script>
+   
+    <script src = "main.js"></script>
+    <script>
+        function validateForm() {
+            var input1 = document.getElementById("fromCity").value;
+            var input2 = document.getElementById("toCity").value;
+            
+            
+            choosePlace(input1);
+            choosePlace(input2);
+            //alert(input1);
+            //alert(input2);
+            if(input1 == "" || input2 == ""){
+               return false;
+               }
+        }
+    </script>
+</head>
+<body>
+    <div>
+    <h1> FLIGHT</h1> 
+    </div>
+    <div align = "center">
+    <form action="list.html" method="GET" onsubmit = "return validateForm()">
+        <div align = "right">
+            <input type="radio" name = "directionOptRadio">One Way <br>
+            <input type="radio" name = "directionOptRadio" checked>Round Trip<br>
+        </div>
+        
+        <div>
+        Flying from<br>
+            <input type="text" name="fromCity" id="fromCity" 
+            placeholder="From City" oninput="ShowList()"><br>
+        Flying to<br>
+            <input type="text" name="toCity" id="toCity" 
+            placeholder="To City" oninput = "ShowListParis()"><br>
+        </div>
+        <div>
+        Departing Airport<br>
+        <select id = "selectFromAirport" name="selectFromAirport" placeholder = "Choose n airport">
+            <option value="Donmuang"></option>
+            <option value="Suwannaphum"></option>
+            </select>
+        </div>
+        <div>
+        Returning Airport
+        <br>
+        <select id="selectToAirport" name="selectToAirport" placeholder = "Choose an airport">
+            <option value="Donmuang"></option>
+            <option value="Suwannaphum"></option>  
+            <option value="CDG"></option>
+            
+        </select>
+        </div>
+        <div>
+        Adult<br>
+        <select id ="selectAdult" name = "selectAdult" placeholder = "Choose a number">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            </select>
+        </div>
+        <div>
+            Cabin<br>
+        <select id = "selectCabin" name = "selectCabin" placeholder = "Choose a cabin">
+            <option value="BUSINESS_CLASS">BUSINESS_CLASS</option>
+            <option value="FRIST_CLASS">FRIST_CLASS</option>
+            <option value="ECONOMY_CLASS">ECONOMY_CLASS</option>
+            </select>
+        </div>
+        
+        
+        <br>
+        <div>
+        <input type="submit" name ="submitBtn" value="Search">
+        </div>
+        
+        </form>
+    </div>
+    
+    
+    
+ <!--   <h1 onmouseenter = "highlightItem(this)" onmouseleave = "resetToIntailStyle(this)">My Header</h1>    
+    <a id = "link1" href = "http://courseweb.cs.tu.ac.th">My Link</a>
+    <p id = "time">Current Time:</p>
+    <ul id = "newList">
+    <li onmouseenter = "highlightItem(this)" onmouseleave = "resetToIntailStyle(this)">Data1</li>
+    <li>Data 2</li>
+    </ul>
+     <button onClick = "changeText('google')" > Google </button> -->
+     
+</body>
+</html>
