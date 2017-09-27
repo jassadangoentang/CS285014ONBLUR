@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script charset="UTF-8" src="js/Person.js"></script>
+<script charset="UTF-8" src="js/GreetingModule.js"></script> <!-- หลักการหาโค้ด ให้ตั้งชื่อเหมือนกัน -->
+
+<body>
+
+<div ng-app="GreetingModule" ng-init = "p2 = Person('Songsakdi', 'Rongviriyapanish');" ng-controller="EnglishGreetingController"> <!--เปลี่ยน 22: -->
+    
+	First Name: <input type="text" ng-model="personForForm.firstName"><br><!--จะกรอกข้อมูล -->
+	Last Name: <input type="text" ng-model="personForForm.lastName"><br>
+	<br>
+	Full Name by access to function "greetingTxt" exported by scope : {{greetingTxt()}} <!--เรียกมใช้อะไรจาก controller -->
+	<br>
+	Full Name by access to public attributes of 'personForForm' class Person: {{personForForm.firstName + personForForm.lastName}}
+	<br>
+	Full Name by access to public method of class Person: {{personForForm.greeting('thai')}}
+</div>
+
+</body>
+</html>
