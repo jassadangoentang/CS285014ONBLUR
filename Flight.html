@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+	<script src="flight.js"></script> <!-- เปลี่ยนเป็นชื่อ class ที่ต้องใช้ -->  
+</head>
+
+<body onload="setAllListOfAirports('selectToAirport')">
+
+<div>
+    Flying to<br>
+    <input type="text" name="toCity" id="toCity" placeholder="To City" 
+           onchange="setAirports('selectFromAirport', document.getElementById('toCity').value)"><br>
+</div>
+
+<div> Destination Airport<br>
+    <select  id="selectToAirport" name="selectedToAirport" placeholder="Choose an airport">
+    </select> <!--เราจะไม่ฝัง code แบบ static ลงไป -->
+</div>
+
+<div> From Airport<br>
+<select id="selectFromAirport" name="selectedFromAirport" placeholder="Choose an airport">  
+    <!--//Dom -->
+  <option>Don Mueang</option> <!--เอามากรอง -->
+  <option>Suvannabhum</option>
+  <option>CDG</option>
+</select>
+</div>
+ <marquee bgcolor="#A9E0B8" direction="lefe" scrollamount="5" width="50%">สีพื้นหลังเป็นสีไข่อ่อน ข้อความวิ่งไปทางซ้าย ความเร็วในการวิ่ง 5 
+      ใช้ขอบเขตครึ่งหน้ากระดาษ
+      </marquee>
+</body>
+</html> 
